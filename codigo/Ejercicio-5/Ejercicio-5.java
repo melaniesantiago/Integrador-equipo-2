@@ -10,7 +10,7 @@ public class bin {
         int longitud=numeroBinario.length();
         
         int numeroDecimal=0;
-        
+        //proceso
         for(int i=0; i<longitud; i++){
             char digito=numeroBinario.charAt(i);
             //verificar si es 0 o 1
@@ -21,6 +21,7 @@ public class bin {
             }else if(digito =='1'){
                 numeroDecimal= numeroDecimal*2+1;
             }else{
+                //salida
                 System.out.println("El numero binario ingresado no es valido");
                 return;
             }
