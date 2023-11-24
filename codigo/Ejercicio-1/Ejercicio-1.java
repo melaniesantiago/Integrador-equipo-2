@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class RectaAngulo {
+public class recta {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -20,12 +20,16 @@ public class RectaAngulo {
         // Calcular la pendiente de la recta (m)
         double m = (y2 - y1) / (x2 - x1);
 
-        // Calcular el ángulo interno α
-        double alpha = Math.atan(m);
+        // Calcular el ángulo de inclinación en radianes
+        double theta = Math.atan(m);
+
+        // Calcular el punto de intersección con el eje y (0, b)
+        double b = y1 - m * x1;
 
         // Imprimir los resultados
         System.out.println("La pendiente de la recta es: " + m);
-        System.out.println("El ángulo interno α es: " + Math.toDegrees(alpha) + " grados.");
+        System.out.println("El ángulo de inclinación es: " + Math.toDegrees(theta) + " grados.");
+        System.out.println("El punto de intersección con el eje y es: (0, " + b + ")");
 
         scanner.close();
     }
