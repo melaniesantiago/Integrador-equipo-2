@@ -1,36 +1,43 @@
 import java.util.Scanner;
-import java.lang.Math;
 
 public class recta {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Obtener las coordenadas del punto A
-        System.out.print("Ingrese la coordenada x del punto A: ");
+        System.out.println("Ingrese las coordenadas del punto A:");
+        System.out.print("x1: ");
         double x1 = scanner.nextDouble();
-        System.out.print("Ingrese la coordenada y del punto A: ");
+        System.out.print("y1: ");
         double y1 = scanner.nextDouble();
 
-        // Obtener las coordenadas del punto B
-        System.out.print("Ingrese la coordenada x del punto B: ");
+        System.out.println("Ingrese las coordenadas del punto B:");
+        System.out.print("x2: ");
         double x2 = scanner.nextDouble();
-        System.out.print("Ingrese la coordenada y del punto B: ");
+        System.out.print("y2: ");
         double y2 = scanner.nextDouble();
 
-        // Calcular la pendiente de la recta (m)
-        double m = (y2 - y1) / (x2 - x1);
+        // Calcular la pendiente de la recta
+        double pendiente = (y2 - y1) / (x2 - x1);
 
-        // Calcular el ángulo de inclinación en radianes
-        double theta = Math.atan(m);
+        // Calcular el ángulo en radianes
+        double anguloRadianes = Math.atan(pendiente);
 
-        // Calcular el punto de intersección con el eje y (0, b)
-        double b = y1 - m * x1;
+        // Convertir el ángulo a grados
+        double anguloGrados = Math.toDegrees(anguloRadianes);
 
-        // Imprimir los resultados
-        System.out.println("La pendiente de la recta es: " + m);
-        System.out.println("El ángulo de inclinación es: " + Math.toDegrees(theta) + " grados.");
-        System.out.println("El punto de intersección con el eje y es: (0, " + b + ")");
+        // Calcular el ángulo interno α entre el eje horizontal y la recta
+        double anguloInterno = 90 - anguloGrados;
 
-        scanner.close();
+        // Calcular el punto de intersección con el eje y (cuando x = 0)
+        double puntoInterseccionY = y1 - pendiente * x1;
+
+        // Construir la ecuación de la recta en formato y = mx + b
+        String ecuacionRecta = "y = " + pendiente + "x + " + puntoInterseccionY;
+
+        System.out.println("Ecuación de la recta: " + ecuacionRecta);
+        System.out.println("Ángulo interno α: " + anguloInterno + "grados");
+        System.out.println("Punto de intersección con el eje y: (0, " + puntoInterseccionY + ")");
+        System.out.println("Pendiente = "+pendiente);
+       
     }
 }
