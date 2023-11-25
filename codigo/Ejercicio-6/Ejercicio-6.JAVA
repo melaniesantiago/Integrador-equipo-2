@@ -86,3 +86,6 @@ public class tabla_de_verdad {
         return expresionesConcatenadas.toString();  // Se genera la expresión booleana final concatenando las expresiones de las filas modificadas.
     }
 }
+
+
+
