@@ -1,1 +1,1 @@
-## En esta carpeta van a estar mis dos problemas que me tocan 
+## En esta carpeta se encuentran subcarpetas nombradas con el numero de ejercicio correspondiente a cada problema resuelto, dentro de las subcarpetas se encuentran archivos .java con el codigo correspondiente, y tambien el diagrama de flujo de este mismo.
