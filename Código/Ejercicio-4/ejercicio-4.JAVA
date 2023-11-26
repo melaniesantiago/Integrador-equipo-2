@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ecuacioncuadratica {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+//entrada 
         System.out.println("Ingrese los coeficientes de la ecuación cuadrática:");
         System.out.print("Coeficiente a: ");
         double a = scanner.nextDouble();
@@ -11,11 +11,11 @@ public class ecuacioncuadratica {
         double b = scanner.nextDouble();
         System.out.print("Coeficiente c: ");
         double c = scanner.nextDouble();
-
+//proceso 
         double discriminante = b * b - 4 * a * c;
                 if (discriminante >= 0) {
             double raiz1 = (-b + Math.sqrt(discriminante)) / (2 * a);
-
+//salida
             System.out.println("Las raíces reales son:");
             System.out.println("Raíz 1: " + raiz1);
             System.out.println("Raíz 2: " + raiz2);
