@@ -1,0 +1,1 @@
+## Dentro de esta carpeta se encuentran los archivos del manuscrito trabajado en lenguaje LaTex que contiene la documentacion de los problemas trabajados en el proyecto integrador. Ademas contiene una carpeta con las imagenes utilizadas en este mismo.
