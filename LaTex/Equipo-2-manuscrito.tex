@@ -1,0 +1,240 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage[utf8]{inputenc}                   
+\usepackage[spanish]{babel}  
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{geometry}                         
+\geometry{left=18mm,right=18mm,top=21mm,bottom=21mm}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[lofdepth,lotdepth]{subfig}
+\usepackage{unitsdef}
+\usepackage{pdfpages} 
+\renewcommand{\unitvaluesep}{\hspace*{4pt}}	
+\usepackage[colorlinks=true,urlcolor=purple,linkcolor=black,citecolor=black]{hyperref} 
+\usepackage{float}	
+\usepackage{booktabs}
+\batchmode
+\bibliographystyle{plain} 
+\pagestyle{plain} 
+\pagenumbering{arabic}
+\usepackage{lastpage}
+\usepackage{fancyhdr}	
+\pagestyle{fancy}	
+\usepackage{multicol} 
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\cfoot{\textbf{\thepage}}
+
+
+\begin{document}
+
+%plantilla imprimir codigo Java
+\lstnewenvironment{javaCode}[1][]
+{\lstset{
+    language=Java,
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{purple},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    frame=single,
+    captionpos=b,
+    #1
+}}
+{}
+
+\title{\includegraphics[width=8cm]{imagen/itsoeh.png}\\ \vspace*{0.2cm} {\large Instituto Tecnológico Superior del Occidente del Estado de Hidalgo} \\
+  \vspace*{0.2cm}
+  \large Ingeniería en Tecnologías de la Información y Comunicaciones  \\  
+  \vspace*{0.5cm}  
+  {\huge Proyecto Integrador} \\
+  {\normalsize Prototipo de problemas de solución de ingeniería aplicado a primer semestre}\\
+  {\vspace{1cm} \large \textbf{Coordinador del proyecto:}\\ Dr. Francisco Javier Cuadros Romero}\\
+  \vspace{1cm}
+  {\large \textbf{Integrantes del equipo:}}
+  \vspace{0.5cm}
+  }
+  
+\author
+{\IEEEauthorblockN{1\textsuperscript{er} Cruz Granados Dulce Marina}%primer autor
+\IEEEauthorblockA{\textit{Estudiante de ITIC´s} \\
+\textit{ITSOEH}\\
+Tezontepec de Aldama, Hgo. \\
+230110477@itsoeh.edu.mx}
+\and
+%segundo autor
+\IEEEauthorblockN{2\textsuperscript{do} Fuentes Pérez Bryan}
+\IEEEauthorblockA{\textit{Estudiante de ITIC´s} \\
+\textit{ITSOEH}\\
+El Rosario, Hgo. \\
+230110581@itsoeh.edu.mx}
+\and
+%segundo autor
+\IEEEauthorblockN{3\textsuperscript{er}Hernández Monroy Ricardo}
+\IEEEauthorblockA{\textit{Estudiante de ITIC´s} \\
+\textit{ITSOEH}\\
+Tezontepec de Aldama, Hgo. \\
+230110240@itsoeh.edu.mx}
+\and
+%segundo autor
+\IEEEauthorblockN{4\textsuperscript{to} Salazar Guerrero Diego}
+\IEEEauthorblockA{\textit{Estudiante de ITIC´s} \\
+\textit{ITSOEH}\\
+San Salvador, HGO. \\
+230110580@itsoeh.edu.mx}
+\and
+%segundo autor
+\IEEEauthorblockN{5\textsuperscript{to} Santiago Reséndiz Melanie}
+\IEEEauthorblockA{\textit{Estudiante de ITIC´s} \\
+\textit{ITSOEH}\\
+Actopan, HGO. \\
+230110616@itsoeh.edu.mx}
+ }
+ \maketitle
+
+ \onecolumn
+ \tableofcontents
+ \newpage
+ \twocolumn
+
+
+
+
+
+\begin{abstract}
+During the period from August to December 2023, we covered different subjects in the Information and Communication Technology Engineering program. In each of these subjects, the exercises to be solved were complemented and related. In differential calculus, the first three exercises were addressed: equation of a line, quadratic equation, and point on a circumference. In the discrete mathematics subject, the following three problems were discussed: conversion of negative or positive decimal integers to binary, conversion of binary numbers to decimal, and truth tables. In the ethics subject, a connection was established with references and research fundamentals, delving deeper into the study of these exercises. In the Introduction to ICT subject, knowledge was applied to topics such as the use of repositories. Finally, in the programming subject, the solutions to the problems were coded.
+\end{abstract}
+
+\begin{IEEEkeywords}
+recta, interseccion, coordenada, punto
+\end{IEEEkeywords}
+
+\section{Introducción}
+En el siguiente documento se hablará sobre seis problemas aplicados al primer semestre de Ingenieria en Tecnologías de la Información y Comunicaciones creando programas en JAVA.
+
+El primer problema habla sobre la pediente de la recta en el cual dadas las coordenadas  $(x1,y1)$ y $(x2,y2)$ al igual que los puntos A y B nos regrese la ecuación de la recta y el ángulo interno que se forma entre el eje horizontal y la recta. El segundo problema es encontrar las raíces de una ecuación de grado dos o ecuación cuadrática de la forma $ax^2+bx+c=0$. El tercer problema nos pide sdeterminar si un punto en el plano cartesiano está dentro o fuera de una circunferencia con centro fuera del origen y de un radio r. El  cuarto problema requiere comprender la numeración binaria para así poder crear el programa que nos haga la conversión de un número decimal a un número binario equivalente. El quinto  problema es parecido al anterior solo que viceversa, ahora es encontrar el número decimal equivalente a un número binario dado por el usuario. El sexto problema nos pide que dados ciertos números de bits se cree una tabla de verdad correspondiente a la cantidad de bits ingresada por el ususario.\\
+
+Estos seis problemas matemáticos que se presentan a continuación en este informe fueron resueltos con la metodología de las 6Ds que consiste en dar primero una \textbf{D}efinición del problema o información acerca del tema que aborda el problema, después \textbf{D}escribir el problema que queremos solucionar, luego de ello \textbf{D}iseñar una solución analizando los datos dados, para después \textbf{D}esarrollar la solución paso por paso y mencionando el código hecho en JAVA para cada problema, y continuar con \textbf{D}epuración y pruebas que consiste en generar una tabla de corridas o compilaciones del código, para terminar con la útlima D que es \textbf{D}ocumentar todo lo anterior, lo cual se muestra a continuación.
+
+\section{Objetivos}
+\subsection{Objetivo General}
+\begin{itemize}
+    \item El objetivo general del uso de software de resolución de problemas de ingeniería es mejorar la eficiencia y efectividad en la resolución de desafíos técnicos y científicos en el campo de la ingeniería, a través de la utilización de herramientas informáticas especializadas.
+\end{itemize}
+
+\subsection{Objetivos específicos}
+\begin{enumerate}
+    \item Adquirir conocimientos sobre las características y funcionalidades de diferentes software de resolución de problemas de ingeniería utilizados en el campo específico de estudio.
+    \item Familiarizarse con la interfaz y la forma de operar de los software seleccionados, incluyendo la entrada de datos, la selección de algoritmos y la interpretación de resultados.
+    \item Aplicar el software en el modelado y diseño de sistemas y componentes, con el fin de optimizar su funcionamiento y mejorar su eficiencia.
+    \item Utilizar el software para realizar análisis de datos y visualización de resultados, con el fin de tomar decisiones fundamentadas y extraer conclusiones relevantes.
+    \item Desarrollar habilidades para la resolución de problemas técnicos mediante la aplicación de software de ingeniería, incluyendo la identificación de variables clave, la formulación de hipótesis y la realización de experimentos virtuales.
+    \item Promover el trabajo en equipo y la colaboración utilizando el software, permitiendo compartir proyectos, datos y resultados entre diferentes miembros del equipo.
+    \item Desarrollar habilidades de comunicación técnica al presentar y explicar los resultados obtenidos mediante el software de resolución de problemas de ingeniería.
+    \item Fomentar la actualización y el aprendizaje continuo sobre nuevas herramientas y técnicas de software de ingeniería, para estar al tanto de los avances tecnológicos en el campo.
+    \item Preparar a los estudiantes para enfrentar los desafíos del mundo laboral en ingeniería, donde el uso de software de resolución de problemas es una habilidad altamente demandada.
+\end{enumerate}
+
+\input{Ex1}
+
+\input{Ex2}
+
+\input{Ex3}
+
+\input{Ex4}
+
+\input{Ex5}
+
+\input{Ex6}
+
+\clearpage
+\section{Conclusión}
+ Para concluir, a lo largo de este periodo de estudio en el que hemos abordado los temas relacionados con la resolución de problemas en ingeniería, hemos llevado a cabo un exhaustivo análisis, un diseño creativo y una implementación efectiva de diversas soluciones. Como resultado, hemos logrado superar con éxito los desafíos planteados, lo cual resalta la relevancia de la colaboración interdisciplinaria y el amplio uso de herramientas tecnológicas innovadoras como apoyo en la resolución de problemas.
+
+Además, hemos reafirmado la importancia de la ingeniería como medio para abordar los diferentes desafíos de la vida real, poniendo especial énfasis en la consideración de aspectos éticos, sociales y ambientales. Este enfoque integral nos ha enseñado la importancia de la creatividad, la colaboración y la aplicación práctica de los conocimientos adquiridos.
+
+\begin{thebibliography}{00}
+
+     \bibitem{La pendiente}
+      Khan Academy | Free online courses, lessons & practice. (s. f.). Khan Academy. https://www.khanacademy.org/
+    \bibitem{FormulaGeneral}
+     La fórmula general - Unidad de Apoyo Para el Aprendizaje. (2023). Unam.mx. https://uapas2.bunam.unam.mx/matematicas/la\_formula\_general/\\
+    
+    \bibitem{punto en una circurferencia}
+    Fórmula de la distancia (video). (n.d.). Khan Academy. https://es.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-and-midpoints/v/distance-formula 
+    
+    \bibitem{Binario a decimal} 
+    Convert integer into byte array (Java) ButtercupButtercup 2 et al.
+    https://stackoverflow.com/questions/1936857/convert-integer-into-byte-array-java
+    
+    \bibitem{Decimal a  binario con signo}
+    Ramos, A. Á., \& Gálvez, J. M. B. (2021, March 1). Cambio de signo de un número en binario. Portal Académico Del CCH. https://portalacademico.cch.unam.mx/cibernetica1/sistemas-de-numeracion/cambio-de-signo
+    \bibitem{Boole}
+    Desarrollada, \& Boole, G. (n.d.). ÁLGEBRA BOOLEANA. https://nlaredo.tecnm.mx/takeyas/apuntes/matematicas\_discretas/apuntes
+    /Algebra\_Booleana.pdf
+
+‌
+     \\
+     
+\end{thebibliography}
+
+\section{Biografías}
+
+\textbf{Santiago Reséndiz Melanie}
+
+Es una estudiante del ITSOEH en la Ingeniería en Tecnologías de la Información y Comunicaciones tiene una pasión por las aplicaciones. Nacida en Actopan, Hgo.  Fue criada en una comunidad llamada Dajiedhit, desde muy temparana edad mostró un gran interés por la computación, sobre todo en el diseño uno de sus principales objetivos es acabar la carrera y tener un trabajo en una empresa como Huawei o Google, una de sus principales pasiones son el anime,la música pop, el volleyball y la programación en especial el área de aplicaciones para android y iOS.
+
+\href{https://github.com/melaniesantiago}{GitHub de Melanie Santiago Reséndiz} 
+\\
+
+\textbf{Hernández Monroy Ricardo}
+
+Es una persona muy audaz y hábil en deportes, interesado por los videojuegos y el anime. Actualmente, se crió y nació en las Presas de la comunidad de Tezontepec de Aldama, Hidalgo. Nació el 6 de noviembre de 2005, teniendo ahora 18 años. Es estudiante en el ITSOEH, cursando la carrera de Tecnologías de la Información y Comunicación, con mucho interés hacia las tecnologías que se enseñan en la carrera.
+
+\href{https://github.com/ricardohernandez21}{GitHub de Ricardo Hernández Monroy}
+\\
+
+\textbf{Fuentes Pérez Bryan}
+
+Es estudiante del Instituto Tecnologico Superior Del Occidente Del Estado De Hidalgo(ITSOEH), que ingreso en la carrera de Ingeneria en Tecnologias de la Informacion y Comunicacion (ITICs), por el gusto y de las habilidades que puede adquirir en su estancia que dure en la escuela y poder aplicar eso en problemas relacionados con el mundo cotidiano , para la amplia gama de beneficios diversos aspectos de nuestras vidas.
+
+ \href{https://github.com/bryanfpp}{GitHub de Bryan Fuentes Perez}
+ \\
+ 
+\textbf{Salazar Guerrero Diego}
+
+ Es un estudiante del Instituto Tecnológico Superior del Occidente del Estado de Hidalgo(ITSOEH), que ingreso a la carrera de Ingeniería en Tecnológias de la Información y Comunicaciones con una pasión hacia las telecomunicaciones, la tecnología y los video juegos. Nacido en el municipio de Progreso de Obregón, Hgo. y criado en el municipio de San Salvador, Hgo. El objetivo principal de Diego es acabar sus estudios en en ITICs, con especialización en telecomunicaciones. Aspira a trabajar en la NASA para contribiur al desarrollo y avance de México.
+ 
+  \href{https://github.com/diego2334577}{GitHub de Diego Salazar Guerrero}
+\\
+
+\textbf{Cruz Granados Dulce Marina}
+  
+ Es una estudiante del Instituto Tecnológico Superior del Occidente del Estado de Hidalgo(ITSOEH), que ingreso a la carrera de Ingeniería en Tecnológias de la Información y Comunicaciones interesada en el area de programacion. Nacida en el municipio de Tula de Allende, Hgo. y criada en Santa Maria Nativitas Atengo Municipio de  Tezontepec de Aldama, Hgo.
+ 
+  \href{https://github.com/Dulcemcg}{GitHub de Dulce Marina Cruz Granados}
+  \\
+ 
+ 
+\end{document}

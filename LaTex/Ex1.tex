@@ -1,0 +1,96 @@
+
+\section{Ecuación de la recta}
+\subsection{Definición}
+Dados 2 puntos A y B con coordenadas $(x1, y1)$ y
+$(x2, y2)$ respectivamente. Regresar la ecuación de la recta y el ángulo interno $\alpha$ que se forma entre el eje horizontal y la recta.
+
+\subsection{Descripción del problema}
+
+En este problema, se tienen dos puntos $A$ y $B$ con coordenadas $(x_1, y_1)$ y $(x_2, y_2)$ respectivamente. El objetivo es calcular la ecuación de la recta que pasa por estos puntos y determinar el ángulo interno $\alpha$ que dicha recta forma con el eje horizontal.
+
+\subsection{Diseño de la solución}
+
+La ecuación de la recta se obtiene utilizando la fórmula de la pendiente:
+
+\begin{equation}
+m = \frac{y_2 - y_1}{x_2 - x_1}
+\end{equation}
+
+Una vez obtenida la pendiente $m$, el ángulo interno $\alpha$ se puede calcular utilizando la función trigonométrica arcotangente:
+
+\begin{equation}
+\alpha = \arctan(m)
+\end{equation}
+
+\subsection{Desarrollo de la solución}
+
+Para resolver el problema, se puede utilizar un programa en JAVA. A continuación se muestra un ejemplo de código:
+
+\begin{javaCode}
+import java.util.Scanner;
+
+public class recta {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese las coordenadas del punto A:");
+        System.out.print("x1: ");
+        double x1 = scanner.nextDouble();
+        System.out.print("y1: ");
+        double y1 = scanner.nextDouble();
+
+        System.out.println("Ingrese las coordenadas del punto B:");
+        System.out.print("x2: ");
+        double x2 = scanner.nextDouble();
+        System.out.print("y2: ");
+        double y2 = scanner.nextDouble();
+
+        // Calcular la pendiente de la recta
+        double pendiente = (y2 - y1) / (x2 - x1);
+
+        // Calcular el ángulo en radianes
+        double anguloRadianes = Math.atan(pendiente);
+
+        // Convertir el ángulo a grados
+        double anguloGrados = Math.toDegrees(anguloRadianes);
+
+        // Calcular el ángulo interno α entre el eje horizontal y la recta
+        double anguloInterno = 90 - anguloGrados;
+
+        // Calcular el punto de intersección con el eje y (cuando x = 0)
+        double puntoInterseccionY = y1 - pendiente * x1;
+
+        // Construir la ecuación de la recta en formato y = mx + b
+        String ecuacionRecta = "y = " + pendiente + "x + " + puntoInterseccionY;
+
+        System.out.println("Ecuación de la recta: " + ecuacionRecta);
+        System.out.println("Ángulo interno α: " + anguloInterno + "grados");
+        System.out.println("Punto de intersección con el eje y: (0, " + puntoInterseccionY + ")");
+        System.out.println("Pendiente = "+pendiente);
+       
+    }
+}
+\end{javaCode}
+
+\subsection{Depuración y pruebas}
+
+Durante el desarrollo y ejecución del programa, es posible encontrar errores o problemas. Para depurar el programa, se pueden utilizar técnicas como la impresión de mensajes de depuración, el uso de herramientas de depuración y la revisión del código en busca de posibles errores. Luego de depurar el programa, se puede proceder a realizar pruebas para verificar su funcionamiento correcto.
+
+En el cuadro 1 se muestran los resultados obtenidos al compilar el código.\\
+
+\begin{table}[!ht]
+\label{T:equipos}
+\begin{center}
+\begin{tabular}{| c | c | c | c | c | c | c |}
+\hline
+\textbf{$x_1$} & \textbf{$x_2$} & \textbf{$y_1$} & \textbf{$y_2$} & \textbf{Pendiente} & \textbf{Inclinación} & \textbf{Intersección} \\
+\hline
+2 & 4 & 4 & 6 & 1 & 45$^o$ & -2 \\
+3 & 2 & 4 & 1 & 3 & 71.57$^o$ & -5 \\
+2 & 2 & 2 & 2 & 0 & 0$^o$ & 0 \\
+1 & 3 & 2 & 4 & 1 & 45$^o$ & 1 \\
+\hline
+\end{tabular}
+\caption{Tabla de corridas.}
+\end{center}
+\end{table}

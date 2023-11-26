@@ -1,0 +1,92 @@
+
+\section{Binario a decimal}
+
+\subsection{Definición}
+
+El problema consiste en convertir un número binario de $n$ bits a su equivalente en decimal. Se desea desarrollar un programa que realice esta conversión de manera eficiente y precisa.
+
+\subsection{Descripción del problema}
+
+Un número binario está compuesto únicamente por los dígitos 0 y 1, y su representación en decimal se basa en el sistema numérico posicional, donde cada dígito tiene un valor asociado dependiendo de su posición. El bit más a la derecha tiene un valor de $2^0$, el siguiente bit tiene un valor de $2^1$, el siguiente $2^2$, y así sucesivamente. Para convertir un número binario a decimal, se deben multiplicar los dígitos binarios por las potencias de 2 correspondientes y luego sumar los resultados.
+
+Por ejemplo, el número binario 1011 se convierte a decimal de la siguiente manera:
+\begin{align*}
+1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 11
+\end{align*}
+
+El objetivo es desarrollar un programa que tome como entrada un número binario de $n$ bits y devuelva su equivalente en decimal.
+
+\subsection{Diseño de solución}
+
+El diseño de la solución implica el desarrollo de un algoritmo que realice la conversión del número binario a decimal. El algoritmo seguirá los siguientes pasos:
+
+\begin{enumerate}
+  \item Solicitar al usuario que ingrese un número binario de $n$ bits.
+  \item Inicializar una variable \texttt{decimal} en 0 para almacenar el resultado de la conversión.
+  \item Recorrer el número binario de derecha a izquierda, comenzando desde el bit más a la derecha:
+    \begin{itemize}
+      \item Obtener el dígito binario en la posición actual.
+      \item Multiplicar el dígito por $2^i$, donde $i$ es la posición actual.
+      \item Sumar el resultado a la variable \texttt{decimal}.
+    \end{itemize}
+  \item Mostrar el resultado \texttt{decimal}, que es el número decimal equivalente al número binario ingresado.
+\end{enumerate}
+
+\subsection{Desarrollo de solución}
+
+A continuación se presenta la implementación del algoritmo en el lenguaje de programación JAVA:
+
+\begin{javaCode}
+import java.util.Scanner;
+public class bin {
+
+    public static void main(String[] args) {
+        // entrada
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Ingresa un numero binario");
+        String numeroBinario=entrada.nextLine();
+        
+        int longitud=numeroBinario.length();
+        
+        int numeroDecimal=0;
+        
+        for(int i=0; i<longitud; i++){
+            char digito=numeroBinario.charAt(i);
+            //verificar si es 0 o 1
+            if(digito=='0'){
+                numeroDecimal= numeroDecimal*2;
+                
+            
+            }else if(digito =='1'){
+                numeroDecimal= numeroDecimal*2+1;
+            }else{
+                System.out.println("El numero binario ingresado no es valido");
+                return;
+            }
+        }
+        System.out.println("El numero decimal equivalente es:"+ numeroDecimal);
+    }
+}
+
+\end{javaCode}
+
+El programa solicita al usuario que ingrese un número binario y luego utiliza la función \texttt{binario\_a\_decimal()} para convertirlo a su equivalente en decimal. El resultado se muestra en pantalla.
+
+\subsection{Depuración y prueba}
+
+Durante el proceso de desarrollo y posterior ejecución del programa, pueden surgir errores o problemas. Para depurar el programa, se pueden utilizar técnicas como la impresión de mensajes de depuración, el uso de herramientas de depuración y la revisión completa del código en busca de posibles errores.\\
+
+\begin{tabular}{|c|c|c|}
+  \hline
+  \textbf{Entrada} & \textbf{Salida Esperada} & \textbf{Salida Obtenida} \\
+  \hline
+  1011 & 11 & 11 \\
+  \hline
+  1101 & 13 & 13 \\
+  \hline
+  10001 & 17 & 17 \\
+  \hline
+  1111 & 15 & 15 \\
+  \hline
+\end{tabular}
+\caption{Compilaciones.}
